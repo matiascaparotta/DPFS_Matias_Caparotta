@@ -27,3 +27,7 @@ Para este proyecto, me he inspirado en los siguientes sitios web:
 * **Facebook Marketplace:**  Este marketplace,  integrado en la red social Facebook,  tiene un gran alcance y es muy fácil de usar.  Me interesa su sistema de búsqueda por ubicación,
    que permite encontrar productos cerca de mi zona,  y su mensajería integrada para la comunicación entre usuarios.  También me parece importante su enfoque en la seguridad,
    con opciones para verificar la identidad de los usuarios y reportar actividades sospechosas.
+
+## Tablero de trabajo:
+[
+](https://github.com/users/matiascaparotta/projects/1/views/1)
