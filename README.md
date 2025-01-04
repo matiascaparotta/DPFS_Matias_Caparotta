@@ -29,5 +29,4 @@ Para este proyecto, me he inspirado en los siguientes sitios web:
    con opciones para verificar la identidad de los usuarios y reportar actividades sospechosas.
 
 ## Tablero de trabajo:
-[
-](https://github.com/users/matiascaparotta/projects/1/views/1)
+[(https://github.com/users/matiascaparotta/projects/1/views/1)]
