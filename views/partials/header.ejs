@@ -1,0 +1,38 @@
+<header>
+  <nav class="navbar">
+    <a href="/" class="logo">VINTAGE CIRCLE</a>
+    <ul class="nav-links">
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/products">Categorías</a></li>
+      <li><a href="/products/create">Agregar Producto</a></li>
+    </ul>
+    
+  
+    <form action="/products/search" method="GET" class="search-form">
+      <input 
+        type="text" 
+        name="query" 
+        placeholder="Buscar productos..." 
+        class="search-input" 
+        required 
+      />
+      <button type="submit" class="search-button">Buscar</button>
+    </form>
+    
+    <ul class="nav-right">
+      <li><a href="/login">Login</a></li>
+      <li><a href="/register">Registro</a></li>
+      <li><a href="/cart" class="cart-icon">🛒</a></li>
+    </ul>
+   
+    <button class="hamburger" aria-label="Abrir menú">☰</button>
+   
+    <div class="menu-overlay">
+      <ul>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/register">Registro</a></li>
+        <li><a href="/cart" class="cart-icon">🛒 Carrito</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>

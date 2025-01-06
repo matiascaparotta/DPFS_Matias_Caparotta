@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%- include('./partials/head') %>
+
+  <body>
+    <%- include('./partials/header') %>
+
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Encuentra piezas únicas</h1>
+        <p>Descubre productos vintage</p>
+        <a href="/products" class="cta-button">Explorar Productos</a>
+      </div>
+    </section>
+
+    <section class="categories">
+      <h2>Categorías</h2>
+      <div class="category-grid">
+        <a href="/products" class="category-item">ROPA</a>
+        <a href="/products" class="category-item">MUEBLES</a>
+        <a href="/products" class="category-item">DECORACIÓN</a>
+        <a href="/products" class="category-item">ACCESORIOS</a>
+      </div>
+    </section>
+
+    <section class="featured-products">
+      <h2>Productos Destacados</h2>
+      <div class="product-grid">
+        <% products.forEach((product) => { %>
+        <div class="product-card">
+          <img
+            src="<%= product.image %>"
+            alt="<%= product.name %>"
+            class="product-image"
+          />
+          <h2><%= product.name %></h2>
+          <p><%= product.description %></p>
+          <p class="product-price">$<%= product.price.toFixed(2) %></p>
+          <button class="cta-button">Agregar al Carrito</button>
+        </div>
+        <% }); %>
+      </div>
+    </section>
+
+    <%- include('./partials/footer') %>
+  </body>
+</html>
