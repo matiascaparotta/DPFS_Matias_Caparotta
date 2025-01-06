@@ -56,17 +56,12 @@ Para este proyecto, me he inspirado en los siguientes sitios web:
   # SPRINT 4
 
   * **Tablero de trabajo:**  [https://github.com/users/matiascaparotta/projects/4/views/1]
-  **Resumen de Rutas del Proyecto**
-
   * **Link de Rama/Repositorio en GitHub:** [https://github.com/matiascaparotta/DPFS_Matias_Caparotta/tree/sprint-4]
 
-Este archivo describe todas las rutas implementadas en el proyecto para el Sprint 4, organizadas por funcionalidad.
 
----
+  **Rutas Generales Sprint 4**
 
-* **Rutas Generales**
-
-Estas rutas están disponibles para navegar por el sistema:
+Estas rutas están disponibles:
 
 | Método | Ruta               | Descripción                                |
 |--------|--------------------|--------------------------------------------|
@@ -117,7 +112,3 @@ Permite ver información detallada de un producto:
 
 ---
 
-* **Instrucciones Adicionales**
-
-- **Parámetros dinámicos (`:id`, `:category`)**: Reemplaza `:id` o `:category` con el valor correspondiente.
-- **Consulta de búsqueda**: Utiliza la ruta `/products/search?query=tuBusqueda` para realizar búsquedas.
