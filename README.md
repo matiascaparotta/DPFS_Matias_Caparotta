@@ -29,9 +29,12 @@ Para este proyecto, me he inspirado en los siguientes sitios web:
    con opciones para verificar la identidad de los usuarios y reportar actividades sospechosas.
 
 ## Tablero de trabajo:
-* **Sprint 2:Tablero de trabajo:** [(https://github.com/users/matiascaparotta/projects/1/views/1)]
+* **SPRINT 2**
   
-* **Sprint 3:**
+##:Tablero de trabajo: [(https://github.com/users/matiascaparotta/projects/1/views/1)]
+  
+* **SPRINT 3:**
+
 * ## Tablero de trabajo: [https://github.com/users/matiascaparotta/projects/3/views/1]
 * ## Rutas Disponibles sprint 3
 
