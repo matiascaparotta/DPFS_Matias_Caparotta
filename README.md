@@ -1,6 +1,10 @@
-# DPFS_Matias_Caparotta
+## DPFS_Matias_Caparotta
 
-## Marketplace de artículos vintage
+# SPRINT 1
+* **Link de Rama/Repositorio en GitHub:** [https://github.com/matiascaparotta/DPFS_Matias_Caparotta/tree/Sprint-1-y-gu%C3%ADa-del-proyecto]
+
+
+* **Marketplace de artículos vintage**
 
 Este marketplace será seguro y confiable para la compraventa de artículos vintage en todo el país, donde los usuarios puedan encontrar piezas únicas, 
 conectar con otros amantes de lo vintage y realizar transacciones con tranquilidad.
@@ -11,7 +15,7 @@ conectar con otros amantes de lo vintage y realizar transacciones con tranquilid
 mi país de origen es Argentina.  Siempre me han fascinado los objetos vintage,  esas piezas con historia que cuentan su propio relato. 
 Ahora,  con mi incursión en el mundo del desarrollo web,  busco crear un marketplace donde otros puedan compartir esta pasión.
 
-## Referentes
+* **Referentes**
 
 Para este proyecto, me he inspirado en los siguientes sitios web:
 
@@ -32,10 +36,14 @@ Para este proyecto, me he inspirado en los siguientes sitios web:
 # SPRINT 2
   
 * **Tablero de trabajo:** [(https://github.com/users/matiascaparotta/projects/1/views/1)]
+*   * **Link de Rama/Repositorio en GitHub:** [https://github.com/matiascaparotta/DPFS_Matias_Caparotta/tree/Sprint-2]
+
   
 # SPRINT 3
 
 * **Tablero de trabajo:** [https://github.com/users/matiascaparotta/projects/3/views/1]
+* **Link de Rama/Repositorio en GitHub:** [https://github.com/matiascaparotta/DPFS_Matias_Caparotta/tree/sprint3]
+
 * **Rutas Disponibles sprint 3**
 
 - **Inicio**: [http://localhost:3000/](http://localhost:3000/)
@@ -44,4 +52,73 @@ Para este proyecto, me he inspirado en los siguientes sitios web:
 - **Detalle de un producto**: [http://localhost:3000/products/:id](http://localhost:3000/products/1) 
 - **Carrito de compras**: [http://localhost:3000/cart](http://localhost:3000/cart)
 - **Crear producto**: [http://localhost:3000/products/create](http://localhost:3000/products/create)
-- **Editar producto**: [http://localhost:3000/products/:id/edit](http://localhost:3000/products/1/edit) 
+- **Editar producto**: [http://localhost:3000/products/:id/edit](http://localhost:3000/products/1/edit)
+
+  # SPRINT 4
+
+  * **Tablero de trabajo:**  [https://github.com/users/matiascaparotta/projects/4/views/1]
+  **Resumen de Rutas del Proyecto**
+
+  * **Link de Rama/Repositorio en GitHub:** [https://github.com/matiascaparotta/DPFS_Matias_Caparotta/tree/sprint-4]
+
+Este archivo describe todas las rutas implementadas en el proyecto para el Sprint 4, organizadas por funcionalidad.
+
+---
+
+* **Rutas Generales**
+
+Estas rutas están disponibles para navegar por el sistema:
+
+| Método | Ruta               | Descripción                                |
+|--------|--------------------|--------------------------------------------|
+| GET    | `/`                | Página principal.                         |
+| GET    | `/products`        | Listado de todos los productos.           |
+
+---
+
+* **Rutas de Creación de Productos**
+
+Permite agregar nuevos productos al sistema:
+
+| Método | Ruta               | Descripción                           |
+|--------|--------------------|---------------------------------------|
+| GET    | `/products/create` | Muestra el formulario para crear un producto. |
+| POST   | `/products/create` | Crea un nuevo producto.               |
+
+---
+
+## **Rutas de Edición de Productos**
+
+Permite modificar productos existentes:
+
+| Método | Ruta                  | Descripción                         |
+|--------|-----------------------|-------------------------------------|
+| GET    | `/products/:id/edit`  | Muestra el formulario para editar un producto. |
+| POST   | `/products/:id/edit`  | Actualiza un producto existente.    |
+
+---
+
+* **Rutas de Eliminación de Productos**
+
+Permite eliminar productos del sistema:
+
+| Método | Ruta                   | Descripción                       |
+|--------|------------------------|-----------------------------------|
+| POST   | `/products/:id/delete` | Elimina un producto específico.  |
+
+---
+
+* **Rutas de Detalle de Productos**
+
+Permite ver información detallada de un producto:
+
+| Método | Ruta               | Descripción                        |
+|--------|--------------------|------------------------------------|
+| GET    | `/products/:id`    | Muestra el detalle de un producto. |
+
+---
+
+* **Instrucciones Adicionales**
+
+- **Parámetros dinámicos (`:id`, `:category`)**: Reemplaza `:id` o `:category` con el valor correspondiente.
+- **Consulta de búsqueda**: Utiliza la ruta `/products/search?query=tuBusqueda` para realizar búsquedas.
