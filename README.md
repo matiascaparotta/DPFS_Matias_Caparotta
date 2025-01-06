@@ -53,7 +53,7 @@ Para este proyecto, me he inspirado en los siguientes sitios web:
   * Crear producto: [http://localhost:3000/products/create](http://localhost:3000/products/create)
   * Editar producto: [http://localhost:3000/products/:id/edit](http://localhost:3000/products/1/edit)
 
-  # SPRINT 4
+# SPRINT 4
 
   * **Tablero de trabajo:**  [https://github.com/users/matiascaparotta/projects/4/views/1]
   * **Link de Rama/Repositorio en GitHub:** [https://github.com/matiascaparotta/DPFS_Matias_Caparotta/tree/sprint-4]
