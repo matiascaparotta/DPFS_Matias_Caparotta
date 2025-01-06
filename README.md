@@ -28,15 +28,15 @@ Para este proyecto, me he inspirado en los siguientes sitios web:
    que permite encontrar productos cerca de mi zona,  y su mensajería integrada para la comunicación entre usuarios.  También me parece importante su enfoque en la seguridad,
    con opciones para verificar la identidad de los usuarios y reportar actividades sospechosas.
 
-## Tablero de trabajo:
-* **SPRINT 2**
-  
-##:Tablero de trabajo: [(https://github.com/users/matiascaparotta/projects/1/views/1)]
-  
-* **SPRINT 3:**
 
-* ## Tablero de trabajo: [https://github.com/users/matiascaparotta/projects/3/views/1]
-* ## Rutas Disponibles sprint 3
+# SPRINT 2
+  
+* **Tablero de trabajo:** [(https://github.com/users/matiascaparotta/projects/1/views/1)]
+  
+# SPRINT 3
+
+* **Tablero de trabajo:** [https://github.com/users/matiascaparotta/projects/3/views/1]
+* **Rutas Disponibles sprint 3**
 
 - **Inicio**: [http://localhost:3000/](http://localhost:3000/)
 - **Registro de usuario**: [http://localhost:3000/register](http://localhost:3000/register)
