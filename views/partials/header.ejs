@@ -1,0 +1,57 @@
+<header>
+  <nav class="navbar">
+    <a href="/" class="logo">VINTAGE CIRCLE</a>
+    
+    <ul class="nav-links">
+  
+      <% if (user) { %>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/products">Categorías</a></li>
+        <li><a href="/products/create">Agregar Producto</a></li>
+      <% } %>
+    </ul>
+
+    <form action="/products/search" method="GET" class="search-form">
+      <input 
+        type="text" 
+        name="query" 
+        placeholder="Buscar productos..." 
+        class="search-input" 
+        required 
+      />
+      <button type="submit" class="search-button">Buscar</button>
+    </form>
+
+    <ul class="nav-right">
+      <% if (user) { %>
+        <li class="profile-menu">
+          <img src="/images/users/<%= user.image || 'default.png' %>" alt="Perfil" class="profile-icon" />
+          <span class="user-name"><%= user.name %></span>
+          <div class="dropdown">
+            <a href="/users/profile">Perfil</a>
+            <a href="/users/logout">Cerrar Sesión</a>
+          </div>
+        </li>
+      <% } else { %>
+        <li><a href="/users/login">Login</a></li>
+        <li><a href="/users/register">Registro</a></li>
+      <% } %>
+      <li><a href="/cart" class="cart-icon">🛒</a></li>
+    </ul>
+
+    <button class="hamburger" aria-label="Abrir menú">☰</button>
+
+    <div class="menu-overlay">
+      <ul>
+        <% if (!user) { %>
+          <li><a href="/users/login">Login</a></li>
+          <li><a href="/users/register">Registro</a></li>
+        <% } else { %>
+          <li><a href="/users/profile">Perfil</a></li>
+          <li><a href="/users/logout">Cerrar Sesión</a></li>
+        <% } %>
+        <li><a href="/cart" class="cart-icon">🛒 Carrito</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>

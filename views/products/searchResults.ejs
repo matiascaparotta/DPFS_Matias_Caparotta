@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%- include('../partials/head') %>
+  <body>
+    <div class="page-container">
+      <%- include('../partials/header') %>
+
+      <main class="content">
+        <h1>Resultados de Búsqueda</h1>
+
+        <% if (products.length > 0) { %>
+          <section class="product-grid">
+            <% products.forEach((product) => { %>
+              <div class="product-card">
+                <img 
+                  src="<%= product.image %>" 
+                  alt="<%= product.name %>" 
+                  class="product-image" 
+                />
+                <h2><%= product.name %></h2>
+                <p><%= product.description %></p>
+                <p class="product-price">$<%= product.price.toFixed(2) %></p>
+                <a href="/products/<%= product.id %>" class="cta-button">Ver Detalle</a>
+              </div>
+            <% }); %>
+          </section>
+        <% } else { %>
+          <p class="error-message"><%= errorMessage %></p>
+        <% } %>
+      </main>
+
+      <%- include('../partials/footer') %>
+    </div>
+  </body>
+</html>

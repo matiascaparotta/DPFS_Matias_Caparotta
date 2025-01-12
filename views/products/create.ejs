@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%- include('../partials/head') %>
+  <body>
+    <div class="page-container">
+      <%- include('../partials/header') %>
+      <main class="content">
+        <section class="form-container">
+          <h1>Crear Producto</h1>
+          <form action="/products/create" method="POST">
+            <div class="form-group">
+              <label for="name">Nombre del Producto:</label>
+              <input type="text" id="name" name="name" required />
+              <span class="error-message"
+                >Por favor, ingrese un nombre válido.</span
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="description">Descripción:</label>
+              <textarea id="description" name="description" required></textarea>
+              <span class="error-message"
+                >La descripción no puede estar vacía.</span
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="price">Precio:</label>
+              <input type="number" id="price" name="price" required />
+              <span class="error-message"
+                >Por favor, ingrese un precio válido.</span
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="category">Categoría:</label>
+              <input type="text" id="category" name="category" required />
+              <span class="error-message">Ingrese una categoría válida.</span>
+            </div>
+
+            <button type="submit" class="cta-buttonForm">Crear Producto</button>
+          </form>
+        </section>
+      </main>
+      <%- include('../partials/footer') %>
+    </div>
+  </body>
+  <script src="/js/scripts.js"></script>
+</html>

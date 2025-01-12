@@ -1,0 +1,20 @@
+<%- include("../partials/head") %>
+<body>
+  <div class="page-container">
+    <%- include("../partials/header") %>
+    <main class="content">
+      <section class="profile-container">
+        <img src="/images/users/<%= user.image || 'default.png' %>" alt="Foto de Perfil" class="profile-image" />
+        <div class="user-info">
+          <h1><%= user.name %> <%= user.lastName %></h1>
+          <p class="email"><%= user.email %></p>
+        </div>
+        <div class="action-buttons">
+          <a href="/users/edit" class="edit-button">Editar Perfil</a>
+          <a href="/users/logout" class="logout-button">Cerrar Sesión</a>
+        </div>
+      </section>
+    </main>
+    <%- include("../partials/footer") %>
+  </div>
+</body>
