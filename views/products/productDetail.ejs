@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%- include('../partials/head') %>
+  <body>
+    <div class="page-container">
+      
+      <%- include('../partials/header') %>
+
+      <main class="content">
+        <section class="product-detail">
+          <div class="product-image">
+           
+            <img 
+            src="/images/products/<%= product.product_image || 'default.png' %>" 
+            alt="<%= product.product_name %>" 
+            class="product-image">          </div>
+          <div class="product-info">
+            
+            <h1><%= product.product_name %></h1>
+         
+            <p class="product-description"><%= product.description %></p>
+ 
+            <p class="product-price">$<%= product.price %></p>
+            <div class="product-actions">
+           
+              <button class="cta-button">Agregar al Carrito</button>
+              <button class="cta-button secondary">Contactar al Vendedor</button>
+            </div>
+          </div>
+        </section>
+      </main>
+
+     
+      <%- include('../partials/footer') %>
+    </div>
+  </body>
+  <script src="/js/scripts.js"></script>
+</html>

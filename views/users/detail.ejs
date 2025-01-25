@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%- include("../partials/head") %>
+  <body>
+    <div class="page-container">
+      <%- include("../partials/header") %>
+      <main class="content">
+        <section class="profile-container">
+          <h1>Detalle del Usuario</h1>
+
+         
+          <div class="profile-image">
+            <img
+              src="/images/users/<%= user.user_image || 'default.png' %>"
+              alt="Foto de Perfil"
+              class="profile-image"
+            />
+          </div>
+
+          
+          <div class="user-info">
+            <h2><%= user.first_name %> <%= user.last_name %></h2>
+            <p><strong>Email:</strong> <%= user.email %></p>
+          </div>
+
+        
+        </section>
+      </main>
+      <%- include("../partials/footer") %>
+    </div>
+  </body>
+</html>

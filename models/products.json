@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "name": "Sillón Retro",
+    "description": "Estilo de sillón retro",
+    
+    "image": "./images/sillonvintage.png"
+  },
+  {
+    "id": 2,
+    "name": "Lámpara antigua",
+    "description": "Lámpara antigua elegante en perfecto estado",
+    
+    "image": "./images/lamparavintage.png"
+  }
+]
