@@ -15,7 +15,7 @@ Este sprint estuvo enfocado en la creación, implementación y gestión de la ba
   - Usuarios.
   - Productos.
   - Categorías (tabla secundaria para productos).
-  - Opcional: Carrito de compras y productos relacionados.
+  - Carrito de compras y productos relacionados.
 - Este diseño asegura relaciones adecuadas y restricciones de integridad.
 -Se encuentra en la carpeta database de este proyecto en formato pdf.
 
