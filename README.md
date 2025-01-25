@@ -14,18 +14,18 @@ Este sprint estuvo enfocado en la creación, implementación y gestión de la ba
 - Se diseñó un Diagrama de Entidad-Relación para reflejar las tablas necesarias:
   - Usuarios.
   - Productos.
-  - Categorías (tabla secundaria para productos).
+  - Categorías
   - Carrito de compras y productos relacionados.
 - Este diseño asegura relaciones adecuadas y restricciones de integridad.
--Se encuentra en la carpeta database de este proyecto en formato pdf.
+  (Se encuentra en la carpeta database de este proyecto en formato pdf)
 
 
 #### **Script de Creación de Base de Datos**
 - Se escribió un script SQL (`structure.sql`) que:
   - Crea la base de datos y todas las tablas necesarias.
-  - Define los campos, tipos de datos y restricciones (NOT NULL, UNIQUE, PRIMARY KEY, FOREIGN KEY, etc.).
+  - Define los campos, tipos de datos y restricciones.
   - Configura las relaciones entre las tablas.
--Se encuentra en la carpeta database de este proyecto.
+(Se encuentra en la carpeta database de este proyecto.)
 
 
 #### **Script de Datos )**
@@ -33,15 +33,14 @@ Este sprint estuvo enfocado en la creación, implementación y gestión de la ba
   - Usuarios (mockeados con datos de prueba).
   - Productos.
   - Categorías.
--Se encuentra en la carpeta database de este proyecto.
+(Se encuentra en la carpeta database de este proyecto.)
 
 
 #### **Configuración de Sequelize**
 - Se configuró Sequelize para conectarse a la base de datos y manejar:
   - Modelos para Usuarios, Productos y Categorías.
-  - Relaciones (asociaciones entre tablas):
-    - Un producto pertenece a una categoría.
-    - Una categoría puede tener múltiples productos.
+  - Relaciones (asociaciones entre tablas).
+   
 
 #### **Implementación de CRUD**
 - Se implementaron las siguientes operaciones para productos y usuarios:
