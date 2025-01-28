@@ -28,7 +28,7 @@ Este sprint estuvo enfocado en la creación, implementación y gestión de la ba
 (Se encuentra en la carpeta database de este proyecto.)
 
 
-#### **Script de Datos **
+#### **Script de Datos**
 - Se generó un archivo (`data.sql`) para poblar las tablas con datos iniciales:
   - Usuarios (mockeados con datos de prueba).
   - Productos.
