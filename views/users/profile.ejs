@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%- include("../partials/head") %>
+  <body>
+    <div class="page-container">
+      <%- include("../partials/header") %>
+      <main class="content">
+        <% if (user) { %>
+         
+          <section class="profile-container">
+            <div class="profile-header">
+              <img src="/images/users/<%= user.user_image || 'default.png' %>" alt="Foto de Perfil" class="profile-image" />
+              <div class="user-info">
+                <h1><%= user.first_name %> <%= user.last_name %></h1>
+                <p class="email"><i class="fas fa-envelope"></i> <%= user.email %></p>
+              </div>
+              <div class="action-buttons">
+                <a href="/users/edit" class="action-button edit-profile">Editar Perfil</a>
+                <a href="/users/logout" class="action-button logout">Cerrar Sesión</a>
+              </div>
+            </div>
+          </section>
+
+         
+          <section class="view-users-section">
+            <a href="/users/list" class="action-button view-users">Ver Usuarios</a>
+          </section> <br>
+        <% } else { %>
+         
+          <section class="no-access">
+            <p>No tienes acceso a esta página. Por favor, <a href="/users/login">inicia sesión</a>.</p>
+          </section>
+        <% } %>
+      </main>
+      <%- include("../partials/footer") %>
+    </div>
+  </body>
+</html>

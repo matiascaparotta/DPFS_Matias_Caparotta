@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%- include("../partials/head") %>
+  <body>
+    <div class="page-container">
+      <%- include("../partials/header") %>
+
+      <main class="content">
+        <section class="register">
+          <h1>Registro de Usuario</h1>
+
+          <% if (errors && errors.length > 0) { %>
+            <ul class="error-messages">
+              <% errors.forEach((error) => { %>
+                <li class="error-text"><%= error %></li>
+              <% }) %>
+            </ul>
+          <% } %>
+
+          <form action="/users/register" method="POST" enctype="multipart/form-data" class="register-form" onsubmit="return validateForm()">
+            <div class="form-group">
+              <label for="first_name">Nombre:</label>
+              <input type="text" id="first_name" name="first_name" value="<%= oldData ? oldData.first_name : '' %>" required autocomplete="given-name" />
+              <span class="error-text" id="first_name_error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="last_name">Apellido:</label>
+              <input type="text" id="last_name" name="last_name" value="<%= oldData ? oldData.last_name : '' %>" required autocomplete="family-name" />
+              <span class="error-text" id="last_name_error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Correo Electrónico:</label>
+              <input type="email" id="email" name="email" value="<%= oldData ? oldData.email : '' %>" required autocomplete="email" />
+              <span class="error-text" id="email_error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="password">Contraseña:</label>
+              <input type="password" id="password" name="password" required minlength="8" autocomplete="new-password" />
+              <span class="error-text" id="password_error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="user_image">Imagen de Perfil:</label>
+              <input type="file" id="user_image" name="user_image" accept="image/*" />
+              <span class="error-text" id="user_image_error"></span>
+            </div>
+
+            <button type="submit" class="cta-buttonRegister">Registrar</button>
+          </form>
+        </section>
+      </main>
+
+      <%- include("../partials/footer") %>
+    </div>
+
+    <script>
+      function validateForm() {
+        let isValid = true;
+
+        function showError(id, message) {
+          const errorElement = document.getElementById(id);
+          errorElement.textContent = message;
+          errorElement.style.color = "red"; 
+        }
+
+        document.querySelectorAll(".error-text").forEach(e => e.textContent = "");
+
+        const firstName = document.getElementById("first_name").value.trim();
+        if (firstName.length < 2) {
+          showError("first_name_error", "El nombre debe tener al menos 2 caracteres.");
+          isValid = false;
+        }
+
+        const lastName = document.getElementById("last_name").value.trim();
+        if (lastName.length < 2) {
+          showError("last_name_error", "El apellido debe tener al menos 2 caracteres.");
+          isValid = false;
+        }
+
+        const email = document.getElementById("email").value.trim();
+        const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        if (!emailPattern.test(email)) {
+          showError("email_error", "El correo debe tener un formato válido.");
+          isValid = false;
+        }
+
+        const password = document.getElementById("password").value;
+        const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+        if (!passwordPattern.test(password)) {
+          showError("password_error", "La contraseña debe tener mayúsculas, minúsculas, un número y un carácter especial.");
+          isValid = false;
+        }
+
+        const userImage = document.getElementById("user_image").files[0];
+        if (userImage && !["image/jpeg", "image/png", "image/gif"].includes(userImage.type)) {
+          showError("user_image_error", "La imagen debe ser un archivo válido (JPG, JPEG, PNG, GIF).");
+          isValid = false;
+        }
+
+        return isValid;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%- include('../partials/head') %>
+<body>
+  <div class="page-container">
+    
+    <%- include('../partials/header') %>
+
+
+   
+    <main class="content">
+      <h1>Carrito de Compras</h1>
+      <section class="cart">
+        <div class="cart-items">
+          
+          <div class="cart-item">
+            <img src="/images/ejemplo1.jpg" alt="Producto" class="cart-item-image">
+            <div class="cart-item-info">
+              <h2>Nombre del Producto</h2>
+              <p>Precio: $150000</p>
+              <div class="cart-item-actions">
+                <label for="quantity">Cantidad:</label>
+                <input type="number" id="quantity" value="1" min="1">
+                <button class="remove-button">Eliminar</button>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+
+    
+        <div class="cart-summary">
+          <h2>Resumen del Pedido</h2>
+          <p>Total: <span class="cart-total">$150000</span></p>
+          <button class="cta-buttonCart">Proceder al Pago</button>
+        </div>
+      </section>
+    </main>
+
+  
+    <%- include('../partials/footer') %>
+
+  </div>
+</body>
+</html>
