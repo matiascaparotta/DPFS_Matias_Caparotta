@@ -1,4 +1,4 @@
-# SPRINT 7
+# SPRINT 8
 
 Tablero de trabajo: [https://github.com/users/matiascaparotta/projects/9]
 
