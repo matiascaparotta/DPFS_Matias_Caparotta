@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%- include("../partials/head") %>
+  <body>
+    <div class="page-container">
+      <%- include("../partials/header") %>
+      <main class="content">
+        <section class="user-list">
+          <h1>Lista de Usuarios</h1>
+          <table class="user-table">
+            <thead>
+              <tr>
+                <th>Foto</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Correo Electrónico</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% users.forEach((user) => { %>
+                <tr>
+                  <td>
+                    <img
+                      src="/images/users/<%= user.user_image || 'default.png' %>"
+                      alt="Foto de <%= user.first_name %>"
+                      class="user-avatar"
+                    />
+                  </td>
+                  <td><%= user.first_name %></td>
+                  <td><%= user.last_name %></td>
+                  <td><%= user.email %></td>
+                  <td>
+                    <a href="/users/<%= user.userId %>/detail" class="details-button">Ver Detalles</a>
+                  </td>
+                </tr>
+              <% }) %>
+            </tbody>
+          </table>
+        </section>
+      </main>
+      <%- include("../partials/footer") %>
+    </div>
+  </body>
+</html>

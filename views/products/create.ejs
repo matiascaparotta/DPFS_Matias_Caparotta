@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('../partials/head') %>
+<body>
+  <div class="page-container">
+    <%- include('../partials/header') %>
+    <main class="content">
+      <section class="form-container">
+        <h1>Crear Producto</h1>
+
+       
+        <% if (typeof errors !== 'undefined' && errors && Object.keys(errors).length > 0) { %>
+          <div class="error-messages">
+            <% Object.values(errors).forEach(error => { %>
+              <p class="error-text"><%= error.msg %></p>
+            <% }); %>
+          </div>
+        <% } %>
+
+        <form action="/products/create" method="POST" enctype="multipart/form-data" onsubmit="return validateProductForm()">
+          <div class="form-group">
+            <label for="product_name">Nombre del Producto:</label>
+            <input type="text" id="product_name" name="product_name" 
+                   value="<%= typeof product_name !== 'undefined' ? product_name : '' %>" required />
+            <% if (errors && errors.product_name) { %>
+              <span class="error-message"><%= errors.product_name.msg %></span>
+            <% } %>
+            <span class="error-text" id="name_error"></span>
+          </div>
+        
+          <div class="form-group">
+            <label for="description">Descripción:</label>
+            <textarea id="description" name="description" required>
+              <%= typeof description !== 'undefined' ? description : '' %>
+            </textarea>
+            <% if (errors && errors.description) { %>
+              <span class="error-message"><%= errors.description.msg %></span>
+            <% } %>
+            <span class="error-text" id="description_error"></span>
+          </div>
+        
+          <div class="form-group">
+            <label for="price">Precio:</label>
+            <input type="number" id="price" name="price" step="0.01" 
+                   value="<%= typeof price !== 'undefined' ? price : '' %>" required />
+            <% if (errors && errors.price) { %>
+              <span class="error-message"><%= errors.price.msg %></span>
+            <% } %>
+            <span class="error-text" id="price_error"></span>
+          </div>
+        
+          <div class="form-group">
+            <label for="category_id">Categoría:</label>
+            <select id="category_id" name="category_id">
+              <% if (typeof categories !== 'undefined' && Array.isArray(categories) && categories.length > 0) { %>
+                <% categories.forEach(category => { %>
+                  <option value="<%= category.categoryId %>" 
+                    <%= typeof category_id !== 'undefined' && category_id == category.categoryId ? 'selected' : '' %>>
+                    <%= category.name_category %>
+                  </option>
+                <% }); %>
+              <% } else { %>
+                <option value="">No hay categorías disponibles</option>
+              <% } %>
+            </select>
+            <span class="error-text" id="category_id_error"></span>
+          </div>
+        
+          <div class="form-group">
+            <label for="product_image">Imagen del Producto:</label>
+            <input type="file" id="product_image" name="product_image" accept="image/*" />
+            <% if (errors && errors.product_image) { %>
+              <span class="error-message"><%= errors.product_image.msg %></span>
+            <% } %>
+            <span class="error-text" id="product_image_error"></span>
+          </div>
+        
+          <button type="submit" class="cta-buttonForm">Crear Producto</button>
+        </form>
+      </section>
+    </main>
+    <%- include('../partials/footer') %>
+  </div>
+
+  <script>
+    function validateProductForm() {
+      let isValid = true;
+
+      function showError(id, message) {
+        const errorElement = document.getElementById(id);
+        errorElement.textContent = message;
+        errorElement.style.color = "red"; 
+      }
+
+      document.querySelectorAll(".error-text").forEach(e => e.textContent = "");
+
+      const name = document.getElementById("product_name").value.trim();
+      if (name.length < 5) {
+        showError("name_error", "El nombre debe tener al menos 5 caracteres.");
+        isValid = false;
+      }
+
+      const description = document.getElementById("description").value.trim();
+      if (description.length < 20) {
+        showError("description_error", "La descripción debe tener al menos 20 caracteres.");
+        isValid = false;
+      }
+
+      const price = document.getElementById("price").value.trim();
+      if (price === "" || isNaN(price) || price <= 0) {
+        showError("price_error", "El precio debe ser un número válido mayor a 0.");
+        isValid = false;
+      }
+
+      const category = document.getElementById("category_id").value;
+      if (!category) {
+        showError("category_id_error", "La categoría es obligatoria.");
+        isValid = false;
+      }
+
+      const productImage = document.getElementById("product_image").files[0];
+      if (productImage && !["image/jpeg", "image/png", "image/gif"].includes(productImage.type)) {
+        showError("product_image_error", "La imagen debe ser un archivo válido (JPG, JPEG, PNG, GIF).");
+        isValid = false;
+      }
+
+      return isValid;
+    }
+  </script>
+</body>
+<script src="/js/scripts.js"></script>
+</html>

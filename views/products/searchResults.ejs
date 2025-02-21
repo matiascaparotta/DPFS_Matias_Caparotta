@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%- include('../partials/head') %>
+  <body>
+    <div class="page-container">
+      <%- include('../partials/header') %>
+
+      <main class="content">
+        <h1>Resultados de Búsqueda</h1>
+
+        <% if (products && products.length > 0) { %>
+          <section class="product-grid">
+            <% products.forEach((product) => { %>
+              <div class="product-card">
+                <img 
+                  src="<%= product.product_image.startsWith('/') ? product.product_image : '/images/products/' + product.product_image %>" 
+                  alt="<%= product.product_name %>" 
+                  class="product-image" 
+                  onerror="this.src='/images/products/default.png'"
+                />
+                <h2 class="product-title"><%= product.product_name %></h2>
+                <p class="product-description"><%= product.description || 'Sin descripción disponible.' %></p>
+                <p class="product-price">$<%= parseFloat(product.price).toFixed(2) %></p>
+                <a href="/products/<%= product.productId %>" class="cta-button">Ver Detalle</a>
+              </div>
+            <% }); %>
+          </section>
+        <% } else { %>
+          <p class="error-message"><%= errorMessage || 'No se encontraron productos que coincidan con la búsqueda.' %></p>
+        <% } %>
+      </main>
+
+      <%- include('../partials/footer') %>
+    </div>
+  </body>
+</html>
